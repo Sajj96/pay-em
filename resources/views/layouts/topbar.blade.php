@@ -4,23 +4,6 @@
             <!-- Sidebar toggle button-->
             <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
             <ul class="top-nav lft-nav">
-               <li>
-                  <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                     <i class="ti-files"> </i><span> Files</span>
-                  </a>
-               </li>               
-               <li class="dropdown">
-                  <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                     <span>Dropdown </span><i class=" icofont icofont-simple-down"></i>
-                  </a>
-                  <ul class="dropdown-menu settings-menu">
-                     <li><a href="#">List item 1</a></li>
-                     <li><a href="#">List item 2</a></li>
-                     <li><a href="#">List item 3</a></li>
-                     <li><a href="#">List item 4</a></li>
-                     <li><a href="#">List item 5</a></li>
-                  </ul>
-               </li>
                <li class="dropdown pc-rheader-submenu message-notification search-toggle">
                   <a href="#!" id="morphsearch-search" class="drop icon-circle txt-white">
                      <i class="ti-search"></i>
@@ -29,11 +12,6 @@
             </ul>
             <!-- Navbar Right Menu-->
             <div class="navbar-custom-menu f-right">
-              <div class="upgrade-button">
-                <a href="#" class="icon-circle txt-white btn btn-sm btn-primary upgrade-button">
-                    <span>Upgrade To Pro</span>
-                </a>
-              </div>
 
                <ul class="top-nav">
                   <!--Notification Menu-->
