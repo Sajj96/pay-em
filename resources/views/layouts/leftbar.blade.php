@@ -2,13 +2,13 @@
          <section class="sidebar" id="sidebar-scroll">
             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
-                <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="index.html">
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/home">
                         <i class="icofont icofont-speed-meter"></i><span> Dashboard</span>
                     </a>                
                 </li>                
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="basic-table.html">
+                    <a class="waves-effect waves-dark" href="/attendance">
                         <i class="icofont icofont-listing-box"></i><span> Attendance</span>
                     </a>                
                 </li>

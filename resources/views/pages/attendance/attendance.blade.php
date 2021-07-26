@@ -19,7 +19,11 @@ Attendance
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h5 class="card-header-text">Hover Effects on Row</h5>
+        <div class="f-right">
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#raised-Modal">
+                <i class="icofont icofont-plus"></i> Add Attendance
+            </a>
+        </div>
     </div>
     <div class="card-block">
         <div class="row">
