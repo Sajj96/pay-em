@@ -46,6 +46,9 @@
         <!-- Style.css -->
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
+        <!-- Datatable.css  -->
+        <link rel="stylesheet" type="text/css" href="/assets/plugins/datatable/css/jquery.dataTables.min.css">
+
         <!-- Responsive.css-->
         <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
 
@@ -119,6 +122,9 @@
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+        <!-- Datatable js  -->
+        <script type="text/javascript" src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
 
         <!-- custom js -->
         <script type="text/javascript" src="/assets/js/main.min.js"></script>
