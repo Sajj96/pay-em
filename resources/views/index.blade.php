@@ -72,6 +72,8 @@
                             @section('content-header')
                             @show
                             </h4>
+                            @section('content-breadcumb')
+                            @show
                         </div>
                     </div>
                     @include('flash-message')
