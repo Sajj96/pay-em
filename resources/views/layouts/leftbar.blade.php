@@ -23,7 +23,7 @@
                     </a>                
                 </li>
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="basic-table.html">
+                    <a class="waves-effect waves-dark" href="/departments">
                         <i class="icofont icofont-company"></i><span> Departments</span>
                     </a>                
                 </li>

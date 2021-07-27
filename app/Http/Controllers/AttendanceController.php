@@ -13,6 +13,6 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        return view('pages.attendance.attendance');
+        return view('pages.attendance.index');
     }
 }

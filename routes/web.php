@@ -14,11 +14,19 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/attendance', [\App\Http\Controllers\AttendanceController::class, 'index']);
-
 Auth::routes();
 Route::get('/', function () {
     return redirect('login');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::prefix('/attendance')->group(function() {
+        Route::get('/', [\App\Http\Controllers\AttendanceController::class, 'index']);
+    });
+
+    Route::prefix('/departments')->group(function() {
+        Route::get('/', [\App\Http\Controllers\DepartmentController::class, 'index']);
+    });
+});
