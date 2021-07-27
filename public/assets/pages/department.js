@@ -19,7 +19,6 @@ function validateForm() {
                 name: deptName,
                 code: deptCode
             },
-            dataType: 'json',
             success: function(){
                 $.growl({
                     icon: 'icofont icofont-close',
@@ -108,3 +107,7 @@ function validateForm() {
     }
     return valid;
 }
+
+$(document).on('click', '', function(){
+    
+});

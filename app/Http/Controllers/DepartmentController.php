@@ -21,15 +21,15 @@ class DepartmentController extends Controller
         ]);
 
         if($validator->fails()) {
-            return redirect('departments')->with('error', 'Name is required');
+            return redirect('departments')->with('error', 'Department Name is required');
         }
 
         try {
-            $department = Department::whereName($request->name)->orWhere($request->code)->first();
+            $department = Department::whereName($request->name)->orWhere('code',$request->code)->first();
             if(!$department) {
                 $department = new Department;
             } else {
-                return redirect('departments')->with('error', 'Department exists');
+                return redirect('departments')->with('error', 'Department already exists');
             }
             $department->name = $request->name;
             $department->code = $request->code;
@@ -37,7 +37,7 @@ class DepartmentController extends Controller
                 return redirect('departments')->with('success', 'Department created successfully');
             }
         } catch (\Exception $e) {
-            return redirect('departments')->with('error', 'Process Failed');
+            return redirect('departments')->with('error', 'Problem in Department creation');
         }
     }
 }

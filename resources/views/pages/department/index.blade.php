@@ -24,7 +24,7 @@ Departments
                 <h5 class="card-header-text">Department Form</h5>
             </div>
             <div class="card-block">
-                <form id="departmentForm" method="post">
+                <form id="departmentForm" action="{{ route('department.add')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="deptName" class="form-control-label">Name</label>
@@ -36,7 +36,7 @@ Departments
                         <input type="text" class="form-control" name="code" id="deptCode" placeholder="Enter code">
                     </div>
                     <button type="reset" class="btn btn-warning waves-effect waves-light m-r-20">Cancel</button>
-                    <button type="button" onclick="return validateForm()" class="btn btn-success waves-effect waves-light m-r-30">Save</button>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-30">Save</button>
                 </form>
             </div>
         </div>
