@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('content-header')
-Department
+Departments
 @endsection
 
 @section('content-breadcumb')
@@ -24,18 +24,19 @@ Department
                 <h5 class="card-header-text">Department Form</h5>
             </div>
             <div class="card-block">
-                <form action="" method="post">
+                <form id="departmentForm" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="name" class="form-control-label">Name</label>
-                        <textarea class="form-control" name="dept-name" id="name" rows="4"></textarea>
+                        <label for="deptName" class="form-control-label">Name</label>
+                        <textarea class="form-control" name="name" id="deptName" rows="4"></textarea>
+                        <span id="deptName-info" class="info"></span>
                     </div>
                     <div class="form-group">
                         <label for="code" class="form-control-label">Code (optional)</label>
-                        <input type="text" class="form-control" name="dept-code" id="code" placeholder="Enter code">
+                        <input type="text" class="form-control" name="code" id="deptCode" placeholder="Enter code">
                     </div>
                     <button type="reset" class="btn btn-warning waves-effect waves-light m-r-20">Cancel</button>
-                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-30">Save</button>
+                    <button type="button" onclick="return validateForm()" class="btn btn-success waves-effect waves-light m-r-30">Save</button>
                 </form>
             </div>
         </div>
@@ -55,66 +56,20 @@ Department
                                     <th>Name</th>
                                     <th>Code</th>
                                     <th>Action</th>
-                                    <th>Nickname</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($departments as $key=>$values)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Ducky</td>
+                                    <td>{{ $values->id }}</td>
+                                    <td>{{ $values->name }}</td>
+                                    <td>{{ $values->code }}</td>
+                                    <td>
+                                        <button class="btn btn-info"><i class="icofont icofont-edit"></i></button>
+                                        <button class="btn btn-danger"><i class="icofont icofont-trash"></i></button>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Ducky</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>Otto</td>
-                                    <td>@twitter</td>
-                                    <td>Ducky</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Ducky</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Ducky</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Ducky</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Ducky</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Ducky</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -123,4 +78,8 @@ Department
         </div>
     </div>
 </div>
+@endsection
+
+@section('page-script')
+<script type="text/javascript" src="{{ asset('assets/pages/department.js')}}"></script>
 @endsection

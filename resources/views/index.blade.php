@@ -127,6 +127,8 @@
         <script type="text/javascript" src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
 
         <!-- custom js -->
+        @section('page-script')
+        @show
         <script type="text/javascript" src="/assets/js/main.min.js"></script>
         <script type="text/javascript" src="/assets/pages/dashboard.js"></script>
         <script type="text/javascript" src="/assets/pages/elements.js"></script>
