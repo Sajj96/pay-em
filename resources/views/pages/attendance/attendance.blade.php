@@ -101,4 +101,31 @@ Attendance
         </div>
     </div>
 </div>
+<div class="modal fade modal-flex" id="raised-Modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Code Explanation for Block Button</h5>
+            </div>
+            <!-- end of modal-header -->
+            <div class="modal-body">
+                <pre class="brush: html;">
+
+                        /* Block Button For Primary Button */
+
+                        &lt;button type="button" class="btn btn-primary btn-block waves-effect"&gt;Primary&lt;/button&gt;
+                        /* Block Button For Success Button */
+
+                        &lt;button type="button" class="btn btn-success btn-block waves-effect"&gt;Success&lt;/button&gt;
+                      </pre>
+            </div>
+            <!-- end of modal-body -->
+        </div>
+        <!-- end of modal-content -->
+    </div>
+    <!-- end of modal-dialog -->
+</div>
 @endsection
