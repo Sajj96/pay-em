@@ -40,4 +40,30 @@ class DepartmentController extends Controller
             return redirect('departments')->with('error', 'Problem in Department creation');
         }
     }
+
+    public function edit($id=null, Request $request)
+    {
+        if (empty($id) && $request->has('id')){
+            $id = $request->id;
+        }
+
+        $department = Department::find($id);
+        if($request->method() == "GET") {
+            return json_encode([
+                'name' => $department->name,
+                'code' => $department->code,
+                'id'  => $department->id
+            ]);
+        }
+
+        try {
+            $department->name = $request->name;
+            $department->code = $request->code;
+            if($department->save()) {
+                return redirect('departments')->with('success', 'Department updated successfully');
+            }
+        } catch (\Exception $e) {
+            return redirect('departments')->with('error', 'Problem in Department updating');
+        }
+    }
 }

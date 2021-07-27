@@ -29,5 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/departments')->group(function() {
         Route::get('/', [\App\Http\Controllers\DepartmentController::class, 'index']);
         Route::post('/add', [\App\Http\Controllers\DepartmentController::class, 'save'])->name('department.add');
+        Route::match(['get','post'],'/{id?}', [\App\Http\Controllers\DepartmentController::class, 'edit'])->name('department.edit');
     });
 });

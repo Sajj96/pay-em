@@ -65,8 +65,12 @@ Departments
                                     <td>{{ $values->name }}</td>
                                     <td>{{ $values->code }}</td>
                                     <td>
-                                        <button class="btn btn-info"><i class="icofont icofont-edit"></i></button>
-                                        <button class="btn btn-danger"><i class="icofont icofont-trash"></i></button>
+                                        <button class="btn btn-info edit-btn" id="{{ $values->id }}"><i class="icofont icofont-edit-alt"></i></button>
+                                        <form action="{{ route('department.delete', $values->id )}}" method="post" class="delete mt-2">
+                                            @csrf
+                                            <input type="hidden" name="method" value="DELETE">
+                                            <button class="btn btn-sm btn-danger tooltips" type="submit" data-placement="top"  data-original-title="Remove"><i class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -77,6 +81,39 @@ Departments
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade modal-flex" id="raised-Modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Edit Department Details</h5>
+            </div>
+            <!-- end of modal-header -->
+            <div class="modal-body">
+                <form action="{{ route('department.edit')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="deptName" class="form-control-label">Name</label>
+                        <textarea class="form-control" name="name" id="dept_name" rows="4"></textarea>
+                        <span id="deptName-info" class="info"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="code" class="form-control-label">Code</label>
+                        <input type="text" class="form-control" name="code" id="dept_code" placeholder="Enter code">
+                        <input type="hidden" name="id" id="dept_id">
+                    </div>
+                    <button type="reset" data-dismiss="modal" class="btn btn-warning waves-effect waves-light m-r-20">Cancel</button>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-30">Update</button>
+                </form>
+            </div>
+            <!-- end of modal-body -->
+        </div>
+        <!-- end of modal-content -->
+    </div>
+    <!-- end of modal-dialog -->
 </div>
 @endsection
 

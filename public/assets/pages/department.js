@@ -108,6 +108,18 @@ function validateForm() {
     return valid;
 }
 
-$(document).on('click', '', function(){
-    
+$(document).on('click', '.edit-btn', function(){
+    var id = $(this).attr('id');
+
+    $.ajax({
+        url: 'departments/'+ id,
+        method: 'GET',
+        dataType: 'json',
+        success: function(response){
+            $('#dept_name').val(response.name);
+            $('#dept_code').val(response.code);
+            $('#dept_id').val(response.id)
+            $('#raised-Modal').modal('show');
+        }
+    });
 });
