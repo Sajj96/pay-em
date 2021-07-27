@@ -10,6 +10,18 @@
         <h3 class="text-center txt-primary">
             Sign In to your account
         </h3>
+        @if(count($errors) > 0)
+            <div class="errorHandler alert alert-danger">
+                @foreach ($errors->all() as $error)
+                <i class="fa fa-times-sign"></i> {{ $error }}
+                @endforeach
+            </div>
+        @endif
+        @if(\Session::has('message'))
+            <div class="successHandler alert alert-success">
+                <i class="fa fa-check"></i> {{ \Session::get('message')}}
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="md-input-wrapper">

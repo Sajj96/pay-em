@@ -12,7 +12,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'PayEM') }}</title>
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png')}}" type="image/x-icon">
@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css')}}">
 
     <!--color css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color/color-1.min.css')}}" id="color" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color/color-5.min.css')}}" id="color" />
 </head>
 
 <body>
@@ -48,7 +48,6 @@
         <!-- Container-fluid starts -->
         <div class="container-fluid">
             <div class="row">
-
                 <div class="col-sm-12">
                     @yield('content')
                 </div>
