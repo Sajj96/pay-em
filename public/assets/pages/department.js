@@ -123,3 +123,11 @@ $(document).on('click', '.edit-btn', function(){
         }
     });
 });
+
+$(document).on('click','.delete-dept',function(){
+    if(confirm("Are you sure to delete this department?")) {
+        return true;
+    } else {
+        return false;
+    }
+})

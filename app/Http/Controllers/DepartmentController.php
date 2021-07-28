@@ -66,4 +66,16 @@ class DepartmentController extends Controller
             return redirect('departments')->with('error', 'Problem in Department updating');
         }
     }
+
+    public function delete($id)
+    {
+        $department = Department::find($id);
+        
+        try {
+            $department->delete();
+            return redirect('departments')->with('success', 'Department deleted successfully');
+        } catch (\Exception $e) {
+            return redirect('departments')->with('error', 'Problem in Department deleting');
+        }
+    }
 }

@@ -64,12 +64,12 @@ Departments
                                     <td>{{ $values->id }}</td>
                                     <td>{{ $values->name }}</td>
                                     <td>{{ $values->code }}</td>
-                                    <td>
-                                        <button class="btn btn-info edit-btn" id="{{ $values->id }}"><i class="icofont icofont-edit-alt"></i></button>
+                                    <td class="d-flex">
+                                        <button class="btn btn-info edit-btn m-r-20" id="{{ $values->id }}"><i class="icofont icofont-edit-alt"></i></button>
                                         <form action="{{ route('department.delete', $values->id )}}" method="post" class="delete mt-2">
                                             @csrf
                                             <input type="hidden" name="method" value="DELETE">
-                                            <button class="btn btn-sm btn-danger tooltips" type="submit" data-placement="top"  data-original-title="Remove"><i class="fa fa-trash"></i></button>
+                                            <button class="btn btn-danger delete-dept"><i class="icofont icofont-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
