@@ -27,8 +27,8 @@
                     <i class="icofont icofont-company"></i><span> Departments</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a class="waves-effect waves-dark" href="basic-table.html">
+            <li class="treeview nav-positions">
+                <a class="waves-effect waves-dark" href="/positions">
                     <i class="icofont icofont-businessman"></i><span> Positions</span>
                 </a>
             </li>

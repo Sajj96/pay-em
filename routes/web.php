@@ -36,4 +36,11 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/employees')->group(function() {
         Route::get('/', [\App\Http\Controllers\EmployeeController::class, 'index'])->name('employees');
     });
+
+    Route::prefix('/positions')->group(function() {
+        Route::get('/', [\App\Http\Controllers\PositionController::class, 'index'])->name('positions');
+        Route::post('/add', [\App\Http\Controllers\PositionController::class, 'save'])->name('position.add');
+        Route::match(['get','post'],'/{id?}', [\App\Http\Controllers\PositionController::class, 'edit'])->name('position.edit');
+        Route::post('/delete/{id}', [\App\Http\Controllers\PositionController::class, 'delete'])->name('position.delete');
+    });
 });
