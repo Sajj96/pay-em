@@ -1,3 +1,9 @@
+@php
+
+use Illuminate\Support\Facades\Route;
+
+$route = Route::currentRouteName();
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -144,6 +150,7 @@
             nav.removeClass('active');
             }
         });
+        $('.sidebar-menu .nav-<?php echo $route ? $route : '' ?>').addClass('active');
         </script>
     </body>
 </html>
