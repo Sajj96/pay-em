@@ -58,6 +58,9 @@ $route = Route::currentRouteName();
         <!-- Responsive.css-->
         <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
 
+        @section('page-styles')
+        @show
+
     </head>
     <body class="sidebar-mini fixed">
         <div class="loader-bg">
