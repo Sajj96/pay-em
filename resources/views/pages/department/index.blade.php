@@ -59,9 +59,10 @@ Departments
                                 </tr>
                             </thead>
                             <tbody>
+                                @php $i = 1 @endphp
                                 @foreach($departments as $key=>$values)
                                 <tr>
-                                    <td>{{ $values->id }}</td>
+                                    <td>{{ $i++ }}</td>
                                     <td>{{ $values->name }}</td>
                                     <td>{{ $values->code }}</td>
                                     <td class="d-flex">
