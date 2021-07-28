@@ -32,4 +32,8 @@ Route::middleware('auth')->group(function () {
         Route::match(['get','post'],'/{id?}', [\App\Http\Controllers\DepartmentController::class, 'edit'])->name('department.edit');
         Route::post('/delete/{id}', [\App\Http\Controllers\DepartmentController::class, 'delete'])->name('department.delete');
     });
+
+    Route::prefix('/employees')->group(function() {
+        Route::get('/', [\App\Http\Controllers\EmployeeController::class, 'index']);
+    });
 });
