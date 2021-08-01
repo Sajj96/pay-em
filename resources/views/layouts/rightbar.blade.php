@@ -21,7 +21,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -31,7 +31,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-2.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -41,7 +41,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="7" data-status="offline" data-username="Michael Scofield" data-toggle="tooltip" data-placement="left" title="Michael Scofield">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-3.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-3.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-danger"></div>
                         </a>
                         <div class="media-body">
@@ -51,7 +51,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="5" data-status="online" data-username="Irina Shayk" data-toggle="tooltip" data-placement="left" title="Irina Shayk">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-4.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-4.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -61,7 +61,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="6" data-status="offline" data-username="Sara Tancredi" data-toggle="tooltip" data-placement="left" title="Sara Tancredi">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-5.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-5.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-danger"></div>
                         </a>
                         <div class="media-body">
@@ -71,7 +71,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -81,7 +81,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-2.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -92,7 +92,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -102,7 +102,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-2.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -113,7 +113,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -123,7 +123,7 @@
                      </div>
                      <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-2.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -134,7 +134,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -145,7 +145,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -156,7 +156,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -167,7 +167,7 @@
                      <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
 
                         <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <img class="media-object img-circle" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                            <div class="live-status bg-success"></div>
                         </a>
                         <div class="media-body">
@@ -189,7 +189,7 @@
          </div>
          <div class="media chat-messages">
             <a class="media-left photo-table" href="#!">
-               <img class="media-object img-circle m-t-5" src="assets/images/avatar-1.png" alt="Generic placeholder image">
+               <img class="media-object img-circle m-t-5" src="{{ asset('assets/images/avatar-1.png')}}" alt="Generic placeholder image">
                <div class="live-status bg-success"></div>
             </a>
             <div class="media-body chat-menu-content">
@@ -208,7 +208,7 @@
             </div>
             <div class="media-right photo-table">
                <a href="#!">
-                  <img class="media-object img-circle m-t-5" src="assets/images/avatar-2.png" alt="Generic placeholder image">
+                  <img class="media-object img-circle m-t-5" src="{{ asset('assets/images/avatar-2.png')}}" alt="Generic placeholder image">
                   <div class="live-status bg-success"></div>
                </a>
             </div>

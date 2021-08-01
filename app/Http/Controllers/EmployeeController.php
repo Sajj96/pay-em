@@ -12,4 +12,9 @@ class EmployeeController extends Controller
         $employees = Employee::all();
         return view('pages.employee.index', compact('employees'));
     }
+
+    public function add()
+    {
+        return view('pages.employee.add');
+    }
 }
