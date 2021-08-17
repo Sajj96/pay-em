@@ -45,7 +45,7 @@ Employees
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="first_name" class="form-control-label">First Name</label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter first name" />
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter first name" required />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -57,19 +57,19 @@ Employees
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="last_name" class="form-control-label">Last Name</label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter last name" />
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter last name" required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="email" class="form-control-label">Email Address</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" />
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="phone" class="form-control-label">Phone Number</label>
-                                <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter phone number" />
+                                <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter phone number" required />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -94,13 +94,13 @@ Employees
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="address" class="form-control-label">Address</label>
-                                <textarea class="form-control" name="address" id="address" rows="3" placeholder="Type your address here"></textarea>
+                                <textarea class="form-control" name="address" id="address" rows="3" placeholder="Type your address here" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="city" class="form-control-label">City</label>
-                                <select name="city" id="city" class="form-control">
+                                <select name="city" id="city" class="form-control" required>
                                     <option value="">Please select</option>
                                 </select>
                             </div>
@@ -108,7 +108,7 @@ Employees
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="country" class="form-control-label">Nationality</label>
-                                <select name="country" id="country" class="form-control">
+                                <select name="country" id="country" class="form-control" required>
                                     <option value="">Please select</option>
                                 </select>
                             </div>
@@ -134,8 +134,8 @@ Employees
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="country" class="form-control-label">Department</label>
-                                <select name="country" id="country" class="form-control">
+                                <label for="dept" class="form-control-label">Department</label>
+                                <select name="dept" id="dept" class="form-control">
                                     <option value="">Please select</option>
                                     @foreach($department as $key => $value)
                                     <option value="{{ $value['id'] }}">{{ $value['name'] }}</option>
@@ -145,7 +145,7 @@ Employees
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="country" class="form-control-label">Job Title</label>
+                                <label for="job_title" class="form-control-label">Job Title</label>
                                 <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Enter job title" />
                             </div>
                         </div>

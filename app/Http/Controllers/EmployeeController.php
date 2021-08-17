@@ -38,8 +38,38 @@ class EmployeeController extends Controller
             'salary'     => 'required|integer'
         ]);
         
+        if($validator->fails()) {
+            return redirect('employees')->with('error', 'valid information are required');
+        }
+
         try {
-            $employee = new Employee;
+            $employee = Employee::whereEmail($request->email)->first();
+            if(!$employee) {
+                $employee = new Employee;
+            }
+            $employee->FirstName = $request->first_name;
+            $employee->MiddleName = $request->middle_name;
+            $employee->LastName = $request->last_name;
+            $employee->Phone = $request->phone;
+            $employee->Gender = $request->gender;
+            $employee->Address = $request->address;
+            $employee->City = $request->city;
+            $employee->Nationality = $request->country;
+            $employee->MaritalStatus = $request->marital_status;
+            $employee->BirthDate = $request->dob;
+            $employee->Department = $request->dept;
+            $employee->JobTitle = $request->job_title;
+            $employee->BasicSalary = $request->salary;
+            $employee->PayFrequency = $request->payfrequency;
+            $employee->PayMethod = $request->paymethod;
+            $employee->EmploymentType = $request->employment_type;
+            $employee->JoinDate = $request->joindate;
+            $employee->EndDate = $request->enddate;
+            if($employee->save()) {
+                return redirect('employees')->with('success', 'Employee added successfully');
+            } else {
+                return redirect('employees')->with('error', 'Problem in employee adding');
+            }
 
         } catch (\Exception $e) {
             return redirect()->route('employee.add')->with('error', 'Problem in employee adding');
