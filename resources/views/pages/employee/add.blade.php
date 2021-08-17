@@ -113,7 +113,7 @@ Employees
                                 <label for="country" class="form-control-label">Nationality</label>
                                 <select name="country" id="country" class="form-control js-example-basic-single" required>
                                     <option value="">Please select</option>
-                                    @foreach($countrys as $k => $country)
+                                    @foreach($countries as $k => $country)
                                     <option value="{{ $country->name }}">{{ ucfirst($country->name) }}</option>
                                     @endforeach
                                 </select>
@@ -231,7 +231,7 @@ Employees
 <script type="text/javascript">
     $(document).ready(function(){
         $(".js-example-basic-single").select2();
-        
+
         $('#date').bootstrapMaterialDatePicker({
             time: false,
             clearButton: true
