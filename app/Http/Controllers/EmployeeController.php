@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Department;
 use App\Models\Employee;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,7 +21,9 @@ class EmployeeController extends Controller
     {
         if($request->method() == "GET") {
             $department = Department::all();
-            return view('pages.employee.add', compact('department'));
+            $countries = Country::all();
+            $states = State::all();
+            return view('pages.employee.add', compact('department', 'countries', 'states'));
         }
 
         $validator = Validator::make($request->all(), [

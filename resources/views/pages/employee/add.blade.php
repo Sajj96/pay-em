@@ -100,16 +100,22 @@ Employees
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="city" class="form-control-label">City</label>
-                                <select name="city" id="city" class="form-control" required>
+                                <select name="city" id="city" class="form-control js-example-basic-single" required>
                                     <option value="">Please select</option>
+                                    @foreach($states as $k => $state)
+                                    <option value="{{ $state->statename }}">{{ ucfirst($state->statename) }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="country" class="form-control-label">Nationality</label>
-                                <select name="country" id="country" class="form-control" required>
+                                <select name="country" id="country" class="form-control js-example-basic-single" required>
                                     <option value="">Please select</option>
+                                    @foreach($countrys as $k => $country)
+                                    <option value="{{ $country->name }}">{{ ucfirst($country->name) }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -224,6 +230,8 @@ Employees
 <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+        $(".js-example-basic-single").select2();
+        
         $('#date').bootstrapMaterialDatePicker({
             time: false,
             clearButton: true
