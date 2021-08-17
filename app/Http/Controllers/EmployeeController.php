@@ -31,19 +31,19 @@ class EmployeeController extends Controller
             'last_name'  => 'required|string',
             'email'      => 'required|email',
             'phone'      => 'required|integer',
-            'gender'     => 'required',
+            'gender'     => 'required|string',
             'address'    => 'required|string',
             'city'       => 'required|string',
-            'country'    => 'required',
-            'marital_status' => 'required',
-            'dob'        => 'required',
+            'country'    => 'required|string',
+            'marital_status' => 'required|string',
+            'dob'        => 'required|string',
             'department' => 'required|integer',
             'job_title'  => 'required|string',
             'salary'     => 'required|integer'
         ]);
         
         if($validator->fails()) {
-            return redirect('employees')->with('error', 'valid information are required');
+            return redirect()->route('employee.add')->with('error', 'Valid information are required');
         }
 
         try {
@@ -72,7 +72,7 @@ class EmployeeController extends Controller
             if($employee->save()) {
                 return redirect('employees')->with('success', 'Employee added successfully');
             } else {
-                return redirect('employees')->with('error', 'Problem in employee adding');
+                return redirect()->route('employee.add')->with('error', 'Problem in employee adding');
             }
 
         } catch (\Exception $e) {

@@ -8,7 +8,8 @@
 <!-- Bootstrap Date-Picker css -->
 <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-datepicker/css/bootstrap-datetimepicker.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" />
-
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/select2/css/s2-docs.css')}}">
 @endsection
 
 @section('content-header')
@@ -39,7 +40,7 @@ Employees
     <div class="card-block">
         <div class="row">
             <div class="col-sm-12">
-            <form action="" method="post">
+            <form action="{{ route('employee.add') }}" method="post">
                     @csrf
                     <div class="row">
                         <div class="col-md-4">
@@ -99,22 +100,22 @@ Employees
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="city" class="form-control-label">City</label>
-                                <select name="city" id="city" class="form-control js-example-basic-single" required>
+                                <label for="country" class="form-control-label">Nationality</label>
+                                <select name="country" id="country" class="form-control js-example-basic-single" required>
                                     <option value="">Please select</option>
-                                    @foreach($states as $k => $state)
-                                    <option value="{{ $state->statename }}">{{ ucfirst($state->statename) }}</option>
+                                    @foreach($countries as $k => $country)
+                                    <option value="{{ $country->name }}">{{ ucfirst($country->name) }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="country" class="form-control-label">Nationality</label>
-                                <select name="country" id="country" class="form-control js-example-basic-single" required>
+                                <label for="city" class="form-control-label">City</label>
+                                <select name="city" id="city" class="form-control js-example-basic-single" required>
                                     <option value="">Please select</option>
-                                    @foreach($countries as $k => $country)
-                                    <option value="{{ $country->name }}">{{ ucfirst($country->name) }}</option>
+                                    @foreach($states as $k => $state)
+                                    <option value="{{ $state->statename }}">{{ ucfirst($state->statename) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -141,7 +142,7 @@ Employees
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="dept" class="form-control-label">Department</label>
-                                <select name="dept" id="dept" class="form-control">
+                                <select name="dept" id="dept" class="form-control js-example-basic-single">
                                     <option value="">Please select</option>
                                     @foreach($department as $key => $value)
                                     <option value="{{ $value['id'] }}">{{ $value['name'] }}</option>
@@ -168,6 +169,9 @@ Employees
                                 <label for="payfrequency" class="form-control-label">Payment Frequency</label>
                                 <select name="payfrequency" id="payfrequency" class="form-control">
                                     <option value="">Please select</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Per project">Per Project</option>
                                 </select>
                             </div>
                         </div>
@@ -176,6 +180,8 @@ Employees
                                 <label for="paymethod" class="form-control-label">Payment Method</label>
                                 <select name="paymethod" id="paymethod" class="form-control">
                                     <option value="">Please select</option>
+                                    <option value="cash on hand">Cash on hand</option>
+                                    <option value="bank deposit">Bank deposit</option>
                                 </select>
                             </div>
                         </div>
@@ -184,8 +190,8 @@ Employees
                                 <label for="employment_type" class="form-control-label">Employment Type</label>
                                 <select name="employment_type" id="employment_type" class="form-control">
                                     <option value="">Please select</option>
-                                    <option value="full_time">Full Time</option>
-                                    <option value="part_time">Part Time</option>
+                                    <option value="full time">Full Time</option>
+                                    <option value="part time">Part Time</option>
                                 </select>
                             </div>
                         </div>
