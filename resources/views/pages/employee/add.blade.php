@@ -77,12 +77,12 @@ Employees
                                 <label for="phone" class="form-control-label">Gender</label>
                                 <div class="form-check">
                                     <label class="custom-control custom-radio">
-                                        <input id="radio1" name="radio" type="radio" class="custom-control-input radio-inline">
+                                        <input id="radio1" name="gender" value="male" type="radio" class="custom-control-input radio-inline">
                                         <span class="custom-control-indicator"></span>
                                         <span class="custom-control-description">Male</span>
                                     </label> 
                                     <label class="custom-control custom-radio">
-                                        <input id="radio1" name="radio" type="radio" class="custom-control-input radio-inline">
+                                        <input id="radio1" name="gender" value="female" type="radio" class="custom-control-input radio-inline">
                                         <span class="custom-control-indicator"></span>
                                         <span class="custom-control-description">Female</span>
                                     </label>
@@ -107,7 +107,7 @@ Employees
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="country" class="form-control-label">Country</label>
+                                <label for="country" class="form-control-label">Nationality</label>
                                 <select name="country" id="country" class="form-control">
                                     <option value="">Please select</option>
                                 </select>
@@ -120,13 +120,16 @@ Employees
                                 <label for="marital_status" class="form-control-label">Marital Status</label>
                                 <select name="marital_status" id="marital_status" class="form-control">
                                     <option value="">Please select</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="country" class="form-control-label">Date of Birth</label>
-                                <input type="text" id="date" class="form-control floating-label" placeholder="Enter Date">
+                                <input type="text" id="date" class="form-control floating-label" name="dob" placeholder="Enter Date">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -134,13 +137,16 @@ Employees
                                 <label for="country" class="form-control-label">Department</label>
                                 <select name="country" id="country" class="form-control">
                                     <option value="">Please select</option>
+                                    @foreach($department as $key => $value)
+                                    <option value="{{ $value['id'] }}">{{ $value['name'] }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="country" class="form-control-label">Job Title</label>
-                                <input type="text" class="form-control" name="job" id="job" placeholder="Enter job title" />
+                                <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Enter job title" />
                             </div>
                         </div>
                     </div>
@@ -172,6 +178,8 @@ Employees
                                 <label for="employment_type" class="form-control-label">Employment Type</label>
                                 <select name="employment_type" id="employment_type" class="form-control">
                                     <option value="">Please select</option>
+                                    <option value="full_time">Full Time</option>
+                                    <option value="part_time">Part Time</option>
                                 </select>
                             </div>
                         </div>

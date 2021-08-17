@@ -20,12 +20,9 @@ class CreateEmployeesTable extends Migration
             $table->string('LastName');
             $table->string('Gender');
             $table->string('Address')->nullable();
-            $table->string('State')->nullable();
             $table->string('City')->nullable();
-            $table->string('ZipCode')->nullable();
-            $table->string('Department')->nullable();
+            $table->bigInteger('Department')->unsigned()->nullable()->index();
             $table->string('JobTitle')->nullable();
-            $table->integer('ReportsTo')->nullable();
             $table->float('BasicSalary')->nullable();
             $table->string('PayFrequency')->nullable();
             $table->string('PayMethod')->nullable();
@@ -44,6 +41,10 @@ class CreateEmployeesTable extends Migration
             $table->string('Email');
             $table->date('BirthDate');
             $table->timestamps();
+        });
+
+        Schema::table('employees', function (Blueprint $table) {
+            $table->foreign('Department')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
