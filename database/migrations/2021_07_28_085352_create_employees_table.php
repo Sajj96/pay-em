@@ -23,7 +23,7 @@ class CreateEmployeesTable extends Migration
             $table->string('City')->nullable();
             $table->bigInteger('Department')->unsigned()->nullable()->index();
             $table->string('JobTitle')->nullable();
-            $table->float('BasicSalary')->nullable();
+            $table->double('BasicSalary')->nullable();
             $table->string('PayFrequency')->nullable();
             $table->string('PayMethod')->nullable();
             $table->string('PayCurrency')->nullable();

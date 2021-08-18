@@ -30,30 +30,31 @@ class EmployeeController extends Controller
             'first_name' => 'required|string',
             'last_name'  => 'required|string',
             'email'      => 'required|email',
-            'phone'      => 'required|integer',
+            'phone'      => 'required',
             'gender'     => 'required|string',
             'address'    => 'required|string',
             'city'       => 'required|string',
             'country'    => 'required|string',
             'marital_status' => 'required|string',
             'dob'        => 'required|string',
-            'department' => 'required|integer',
+            'dept'       => 'required',
             'job_title'  => 'required|string',
-            'salary'     => 'required|integer'
+            'salary'     => 'required'
         ]);
         
         if($validator->fails()) {
-            return redirect()->route('employee.add')->with('error', 'Valid information are required');
+            return redirect()->back()->with('error', 'Valid information are required');
         }
 
         try {
-            $employee = Employee::whereEmail($request->email)->first();
-            if(!$employee) {
+            // $employee = Employee::where('Email','=',$request->email)->first();
+            // if(!$employee) {
                 $employee = new Employee;
-            }
+            // }
             $employee->FirstName = $request->first_name;
             $employee->MiddleName = $request->middle_name;
             $employee->LastName = $request->last_name;
+            $employee->Email = $request->email;
             $employee->Phone = $request->phone;
             $employee->Gender = $request->gender;
             $employee->Address = $request->address;
@@ -61,9 +62,9 @@ class EmployeeController extends Controller
             $employee->Nationality = $request->country;
             $employee->MaritalStatus = $request->marital_status;
             $employee->BirthDate = $request->dob;
-            $employee->Department = $request->dept;
+            $employee->Department = intval($request->dept);
             $employee->JobTitle = $request->job_title;
-            $employee->BasicSalary = $request->salary;
+            $employee->BasicSalary = intval($request->salary);
             $employee->PayFrequency = $request->payfrequency;
             $employee->PayMethod = $request->paymethod;
             $employee->EmploymentType = $request->employment_type;
@@ -71,12 +72,10 @@ class EmployeeController extends Controller
             $employee->EndDate = $request->enddate;
             if($employee->save()) {
                 return redirect('employees')->with('success', 'Employee added successfully');
-            } else {
-                return redirect()->route('employee.add')->with('error', 'Problem in employee adding');
-            }
+            } 
 
         } catch (\Exception $e) {
-            return redirect()->route('employee.add')->with('error', 'Problem in employee adding');
+            return redirect()->back()->with('error', 'Problem in employee adding'.$e);
         }
     }
 }

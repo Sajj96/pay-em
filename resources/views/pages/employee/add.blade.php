@@ -70,7 +70,7 @@ Employees
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="phone" class="form-control-label">Phone Number</label>
-                                <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter phone number" required />
+                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter phone number" required />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -125,7 +125,7 @@ Employees
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="marital_status" class="form-control-label">Marital Status</label>
-                                <select name="marital_status" id="marital_status" class="form-control">
+                                <select name="marital_status" id="marital_status" class="form-control" required>
                                     <option value="">Please select</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
@@ -135,17 +135,17 @@ Employees
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="country" class="form-control-label">Date of Birth</label>
-                                <input type="text" id="date" class="form-control floating-label" name="dob" placeholder="Enter Date">
+                                <label for="dob" class="form-control-label">Date of Birth</label>
+                                <input type="text" id="date" class="form-control floating-label" name="dob" placeholder="Enter Date" required>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="dept" class="form-control-label">Department</label>
-                                <select name="dept" id="dept" class="form-control js-example-basic-single">
+                                <select name="dept" id="dept" class="form-control js-example-basic-single" required>
                                     <option value="">Please select</option>
                                     @foreach($department as $key => $value)
-                                    <option value="{{ $value['id'] }}">{{ $value['name'] }}</option>
+                                    <option value="{{ $value->id }}">{{ $value->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -153,15 +153,15 @@ Employees
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="job_title" class="form-control-label">Job Title</label>
-                                <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Enter job title" />
+                                <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Enter job title" required />
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="country" class="form-control-label">Basic Salary</label>
-                                <input type="number" class="form-control" name="salary" id="salary" placeholder="Enter salary" />
+                                <label for="salary" class="form-control-label">Basic Salary</label>
+                                <input type="number" class="form-control" name="salary" id="salary" placeholder="Enter salary" required/>
                             </div>
                         </div>
                         <div class="col-md-3">
