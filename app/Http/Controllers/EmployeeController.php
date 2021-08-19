@@ -47,10 +47,10 @@ class EmployeeController extends Controller
         }
 
         try {
-            // $employee = Employee::where('Email','=',$request->email)->first();
-            // if(!$employee) {
+            $employee = Employee::where('Email','=',$request->email)->first();
+            if(!$employee) {
                 $employee = new Employee;
-            // }
+            }
             $employee->FirstName = $request->first_name;
             $employee->MiddleName = $request->middle_name;
             $employee->LastName = $request->last_name;
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
             } 
 
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Problem in employee adding'.$e);
+            return redirect()->back()->with('error', 'Problem in employee adding');
         }
     }
 }

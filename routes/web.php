@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/employees')->group(function() {
         Route::get('/', [\App\Http\Controllers\EmployeeController::class, 'index'])->name('employees');
         Route::match(['get', 'post'],'/add', [\App\Http\Controllers\EmployeeController::class, 'add'])->name('employee.add');
+        Route::match(['get','post'],'/{id?}', [\App\Http\Controllers\EmployeeController::class, 'edit'])->name('employee.edit');
+        Route::post('/delete/{id}', [\App\Http\Controllers\EmployeeController::class, 'delete'])->name('employee.delete');
     });
 
     Route::prefix('/positions')->group(function() {

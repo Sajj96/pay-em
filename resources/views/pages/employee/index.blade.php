@@ -34,12 +34,31 @@ Employees
                             <th>#</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Username</th>
-                            <th>Nickname</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Position</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @php $i = 1 @endphp
                         @foreach($employees as $key=>$values)
+                        <tr>
+                            <td>{{ $i++ }}</td>
+                            <td>{{ $values->FirstName }}</td>
+                            <td>{{ $values->LastName }}</td>
+                            <td>{{ $values->Email }}</td>
+                            <td>{{ $values->Phone }}</td>
+                            <td>{{ $values->JobTitle }}</td>
+                            <td class="d-flex">
+                                <button class="btn btn-info edit-btn m-r-20" id="{{ $values->id }}"><i class="icofont icofont-edit-alt"></i></button>
+                                <form action="{{ route('employee.delete', $values->id )}}" method="post" class="delete mt-2">
+                                    @csrf
+                                    <input type="hidden" name="method" value="DELETE">
+                                    <button class="btn btn-danger delete-dept"><i class="icofont icofont-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
