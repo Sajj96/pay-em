@@ -78,4 +78,40 @@ class EmployeeController extends Controller
             return redirect()->back()->with('error', 'Problem in employee adding');
         }
     }
+
+    public function edit(Request $request, $id)
+    {
+        if($request->method() == 'GET') {
+            $employee = Employee::find($id);
+            return view('pages.employee.edit', compact('employee'));
+        }
+
+        try {
+            $employee = Employee::find($id);
+            $employee->FirstName = $request->first_name;
+            $employee->MiddleName = $request->middle_name;
+            $employee->LastName = $request->last_name;
+            $employee->Email = $request->email;
+            $employee->Phone = $request->phone;
+            $employee->Gender = $request->gender;
+            $employee->Address = $request->address;
+            $employee->City = $request->city;
+            $employee->Nationality = $request->country;
+            $employee->MaritalStatus = $request->marital_status;
+            $employee->BirthDate = $request->dob;
+            $employee->Department = intval($request->dept);
+            $employee->JobTitle = $request->job_title;
+            $employee->BasicSalary = intval($request->salary);
+            $employee->PayFrequency = $request->payfrequency;
+            $employee->PayMethod = $request->paymethod;
+            $employee->EmploymentType = $request->employment_type;
+            $employee->JoinDate = $request->joindate;
+            $employee->EndDate = $request->enddate;
+            if($employee->save()) {
+                return redirect('employees')->with('success', 'Employee added successfully');
+            } 
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Problem in employee editing');
+        }
+    }
 }
